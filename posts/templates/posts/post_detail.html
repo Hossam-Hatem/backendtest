@@ -1,0 +1,14 @@
+<h1>Post Detait </h1>
+
+
+<h2>{{post}}</h2>
+<h3>{{post.contnent}}</h3>
+<img src="{{post.image.url}}">
+<a href="{% url 'blog:new_post' %}">new</a>
+<button type="button"><a href="{% url 'blog:delete_post' post.id %}">delete</a></button>
+<a href="{% url 'blog:post_list' %}">view posts</a>
+<a href="{% url 'blog:edit_post' post.id %}">edit post</a>
+
+
+{% comment %} <input type="file" name="post.file.url">
+ {% endcomment %}

@@ -15,17 +15,13 @@ Including another URLconf
 """
 from xml.dom.minidom import Document
 from django.contrib import admin
-from django.urls import path
-from posts.views import post_list ,singel_post,new_post,edit_post
+from django.urls import path , include
 from django.conf import settings                         #!image
 from django.conf.urls.static import static               #!image
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/',post_list),
-    path('blog/<int:id>',singel_post),
-    path('blog/new',new_post),
-    path('blog/<int:id>/edit',edit_post),
+    path('blog/', include('posts.urls',namespace='blog'))
 ]
 
 
